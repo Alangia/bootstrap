@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aventura Gráfica — Presentación</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    :root{
+      --accent: #ebb800; 
+      --bg: #d5ad0d;
+      --muted: #3f4e5c;
+    }
+    body{
+      background: linear-gradient(180deg,var(--bg),#ffffff);
+      color:#222;
+      scroll-behavior: smooth;
+    }
+    nav.navbar{background: rgba(255,255,255,0.6); backdrop-filter: blur(4px);}    
+    .hero{
+      min-height:40vh; display:flex; align-items:center; justify-content:center; text-align:center;
+      padding:4rem 1rem;
+    }
+    .card-ghost{background:rgba(255,255,255,0.8); border:0; box-shadow:0 6px 24px rgba(0,0,0,0.06);}
+    .nav-link:hover{transform:translateY(-2px); transition:all .15s ease}
+    .accent-btn{background:var(--accent); color:white; border:none}
+    .accent-btn:hover{filter:brightness(.95)}
+    section{padding:5rem 0}
+    .small-muted{color:var(--muted)}
+
+
+    .canvas-wrap{
+      width: fit-content; 
+      margin: 0 auto;
+      padding: 10px;
+      background: #f4f4f2; 
+      border-radius: 12px; 
+      box-shadow: 0 8px 30px rgba(0,0,0,0.06); 
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+
+    #sketch-container {
+      display: flex;
+      justify-content: center;
+    }
+  </style>
+</head>
+<body>
+
+
+<nav class="navbar navbar-expand-lg sticky-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="#">Aventura Gráfica</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link" href="#proyecto">Proyecto</a></li>
+        <li class="nav-item"><a class="nav-link" href="#equipo">Equipo</a></li>
+        <li class="nav-item"><a class="nav-link" href="#juego">Jugar</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<header id="inicio" class="INICIO1">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="card card-ghost p-4 mt-5">
+          <h1 class="display-6">La Aventura: <span class="text-uppercase small-muted">El juicio de las almas</span></h1>
+          <p class="lead small-muted">Una aventura gráfica interactiva creada con p5.js.</p>
+          <div class="d-flex justify-content-center gap-2 mt-3">
+            <a class="btn accent-btn btn-lg" href="#juego">Jugar ahora</a>
+            <a class="btn btn-outline-secondary btn-lg" href="#proyecto">Ver proceso</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+<section id="proyecto">
+  <div class="container">
+    <div class="row gy-4 align-items-center">
+      <div class="col-lg-6">
+        <h2>Temática y Diseño</h2>
+        <p class="small-muted">Decidimos tomar parte de la mitología egipcia centrada en Anubis y el juicio de las almas.</p>
+        <ul>
+          <li>Concepto: posibles recorridos espirituales en el más allá.</li>
+          <li>Estética: tomamos conceptos del arte egipcio.</li>
+          <li>Mecánica: narrativa integrada a la experiencia (POO).</li>
+        </ul>
+      </div>
+      <div class="col-lg-6">
+        <div class="card p-3">
+          <h5>Proceso de producción</h5>
+          <p class="small-muted">Resumen del desarrollo:</p>
+          <ol>
+            <li>Preproducción — narrativa</li>
+            <li>Producción — arte + programación</li>
+            <li>Pruebas — integración interactiva</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="equipo" class="bg-light">
+  <div class="container">
+    <h2>Equipo</h2>
+    <p class="small-muted">Integrantes de las etapas anteriores del proyecto.</p>
+    <div class="row gy-3">
+      <div class="col-md-6">
+        <div class="card p-3 text-center">
+          <h5>Alan Giammarco</h5>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card p-3 text-center">
+          <h5>Grecia Weber</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--el juego integrado -->
+<section id="juego">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h2>El juicio de las almas</h2>
+        <p class="small-muted">Elegí tu camino...</p>
+
+
+        <div class="canvas-wrap my-3">
+           <div id="sketch-container"></div>
+        </div>
+
+        <div class="d-flex justify-content-center gap-2 mt-3">
+          <button onclick="location.reload()" class="btn accent-btn">Reiniciar juego</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="text-center py-3">
+  <p class="small-muted">Trabajo Práctico FINAL — Etapa 3</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="libraries/p5.min.js"></script>
+<script src="libraries/p5.sound.min.js"></script>
+
+
+<script src="tpfinalparte2.js"></script>
+
+</body>
+</html>
